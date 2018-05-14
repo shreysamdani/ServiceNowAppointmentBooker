@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Bookings" max_length="40" name="x_228438_appointme_bookings" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="person" label="Type Of Appointment" mandatory="true" max_length="40" name="u_choice_1" type="string">
+            <choice>
+                <element label="In-Person" sequence="0" value="person"/>
+                <element label="Video Call" sequence="1" value="video"/>
+                <element label="Phone Call" sequence="2" value="phone"/>
+            </choice>
+        </element>
+        <element label="Appointment Date/Time" mandatory="true" max_length="40" name="u_glide_date_time_3" type="glide_date_time"/>
+        <element label="Length of Appointment" mandatory="true" max_length="40" name="u_glide_time_4" type="glide_time"/>
+        <element label="User" mandatory="true" max_length="32" name="u_reference_6" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Reason for Appointment" mandatory="true" max_length="40" name="u_string_5" type="string"/>
+        <index name="index">
+            <element name="u_reference_6"/>
+        </index>
+    </element>
+</database>
